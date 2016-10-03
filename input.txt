@@ -1,0 +1,26 @@
+class A
+
+  def f(x:int, y:double) : int
+     x = if 1
+            true; 3
+            true
+         else
+             // -1; // should this be a parsing error or tc error?
+         end
+  end
+
+end
+
+trait B
+
+  def f(x:int, y:double) : int
+     x = if 1 then true; 1 < 3; true else -1 end
+     y = if 1 then else -1 end // the same question
+     z = if 1 then true; 1 else -1 end
+  end
+
+  def g(x:int, y:double) : int
+     x < 3; x
+  end
+
+end
